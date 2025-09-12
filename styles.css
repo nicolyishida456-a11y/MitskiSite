@@ -1,0 +1,102 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Cabeçalho */
+header {
+  background-color: #111;
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+}
+
+header h1 {
+  margin-bottom: 10px;
+}
+
+header nav ul {
+  list-style: none;
+}
+
+header nav ul li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+header nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header nav a:hover {
+  color: #ff4081;
+}
+
+/* Seção hero */
+.hero {
+  text-align: center;
+  padding: 20px;
+  background-color: #222;
+  color: #fff;
+}
+
+.hero img {
+  max-width: 250px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* Seções */
+section {
+  padding: 20px;
+}
+
+section h2 {
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.albuns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.album {
+  text-align: center;
+}
+
+.album img {
+  width: 150px;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.album img:hover {
+  transform: scale(1.05);
+}
+
+/* Rodapé */
+footer {
+  background-color: #111;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Links */
+a {
+  color: #ff4081;
+}
