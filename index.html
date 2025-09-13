@@ -5,6 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mitski - Artista Musical</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Botão de acessibilidade fixo */
+    .acessibilidade-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #222;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 15px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    /* Menu de acessibilidade */
+    .acessibilidade-menu {
+      display: none;
+      position: fixed;
+      top: 60px;
+      right: 20px;
+      background: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 15px;
+      z-index: 1000;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+
+    .acessibilidade-menu button {
+      display: block;
+      margin: 5px 0;
+      width: 100%;
+      padding: 8px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    /* Tema para daltônicos (alto contraste) */
+    .daltonico {
+      filter: contrast(1.2) saturate(0.8);
+      background-color: #fdfdfd;
+      color: #000;
+    }
+  </style>
 </head>
 <body>
 
@@ -66,9 +112,39 @@
 
   <!-- Rodapé -->
   <footer>
-    <p>Feito por [Seu Nome] - Projeto Alura + GitHub Pages</p>
+    <p>Feito por Nicoly - Projeto Alura + GitHub Pages</p>
   </footer>
 
-  <script src="script.js"></script>
-</body>
-  </html>
+  <!-- Botão de acessibilidade -->
+  <button class="acessibilidade-btn">♿</button>
+
+  <!-- Menu de acessibilidade -->
+  <div class="acessibilidade-menu">
+    <button onclick="aumentarFonte()">Aumentar Fonte</button>
+    <button onclick="diminuirFonte()">Diminuir Fonte</button>
+    <button onclick="alternarDaltonico()">Modo Daltônico</button>
+  </div>
+
+  <script>
+    const btn = document.querySelector('.acessibilidade-btn');
+    const menu = document.querySelector('.acessibilidade-menu');
+    let fonteAtual = 100;
+
+    // Mostra/esconde o menu de acessibilidade
+    btn.addEventListener('click', () => {
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Funções de acessibilidade
+    function aumentarFonte() {
+      fonteAtual += 10;
+      document.body.style.fontSize = fonteAtual + '%';
+    }
+
+    function diminuirFonte() {
+      fonteAtual = Math.max(80, fonteAtual - 10);
+      document.body.style.fontSize = fonteAtual + '%';
+    }
+
+    function alternarDaltonico() {
+      document.body.classList.toggle
